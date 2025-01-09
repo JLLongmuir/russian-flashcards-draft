@@ -11,25 +11,22 @@
         <h1>Jonathan's Russian Sight Words (Русские слова Джона)</h1>
         <nav>
             <ul class="navigation">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="easy.html">Easy</a></li>
-                <li><a href="medium.html">Medium</a></li>
-                <li><a href="hard.html">Hard</a></li>
+                <li><button onclick="showHome()">Home</button></li>
+                <li><button onclick="showTier('easy')">Easy</button></li>
+                <li><button onclick="showTier('medium')">Medium</button></li>
+                <li><button onclick="showTier('hard')">Hard</button></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section class="home">
-            <h2>Добро пожаловать</h2>
-            <div class="intro-box">
-                <p>
-                    Hello, my name is Jonathan Longmuir. I am coding a website to help me learn Russian better and also practice programming. If you are reading this, Nadyusha, I love you with all my heart.
-                </p>
-                <hr>
-                <p>
+    <main id="content">
+        <!-- Content dynamically loaded here -->
     </main>
+
+    <footer>
+        <p>“Learning a new language is like unlocking a new world.”</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
-</html>
+</html> 
