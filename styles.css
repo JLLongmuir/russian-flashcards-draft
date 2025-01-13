@@ -1,147 +1,148 @@
 /* General Styles */
 body {
-    font-family: "Times New Roman", serif;
-    background: linear-gradient(to right, #e0eafc, #cfdef3);
-    color: #333;
+    font-family: "Times New Roman", serif; /* Classic and clean font */
+    background: linear-gradient(to right, #e0eafc, #cfdef3); /* A calm gradient for a soft vibe */
+    color: #333; /* Neutral and readable text color */
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
+    flex-direction: column; /* Aligns everything vertically */
+    align-items: center; /* Centers content horizontally */
+    min-height: 100vh; /* Ensures full height coverage */
 }
 
 /* Header Styles */
 header {
-    width: 100%;
-    background-color: #6a5acd;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    width: 100%; /* Full-width header */
+    background-color: #6a5acd; /* Cool purple for personality */
+    padding: 20px; /* Gives breathing room */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds depth with subtle shadow */
+    text-align: center; /* Centers the text inside */
 }
 
 header h1 {
-    color: white;
-    margin: 0;
+    color: white; /* White stands out against the purple */
+    margin: 0; /* Removes any default margin */
 }
 
 /* Navigation Styles */
 .navigation {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 0;
+    display: flex; /* Buttons laid out horizontally */
+    justify-content: center; /* Center them in the middle */
+    gap: 20px; /* Space between buttons */
+    padding: 0; /* Removes padding for cleaner look */
 }
 
+/* Navigation Buttons */
 .navigation button {
-    font-family: "Times New Roman", serif;
-    font-size: 16px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #6a5acd;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-family: "Times New Roman", serif; /* Matches the theme */
+    font-size: 16px; /* Standard readable size */
+    padding: 10px 20px; /* Roomy buttons for easy clicking */
+    border: none; /* No default border */
+    border-radius: 5px; /* Smooth, rounded edges */
+    background-color: #6a5acd; /* Matches the header purple */
+    color: white; /* Text color pops on purple */
+    cursor: pointer; /* Pointer on hover makes it clear it’s clickable */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth animations */
 }
 
 .navigation button:hover {
-    background-color: #483d8b;
-    transform: scale(1.05);
+    background-color: #483d8b; /* A darker purple hover effect */
+    transform: scale(1.05); /* Slight zoom for interactivity */
 }
 
 /* Main Content Styles */
 main {
-    width: 80%;
-    margin-top: 20px;
-    text-align: center;
+    width: 80%; /* Keeps content neat and centered */
+    margin-top: 20px; /* Adds space below the header */
+    text-align: center; /* Centers main content */
 }
 
 /* Home Page Styles */
 .intro-box {
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    line-height: 1.8;
-    font-size: 18px;
-    text-align: left;
+    background-color: rgba(255, 255, 255, 0.9); /* Transparent white for contrast */
+    padding: 30px; /* Roomy container */
+    border-radius: 10px; /* Soft rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    line-height: 1.8; /* Increases text readability */
+    font-size: 18px; /* Easy-to-read font size */
+    text-align: left; /* Aligns text to the left */
 }
 
 .intro-box h2 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 10px;
+    font-size: 24px; /* Makes the welcome header stand out */
+    color: #333; /* Matches the body text color */
+    margin-bottom: 10px; /* Adds space below the title */
 }
 
 .intro-box p {
-    margin-bottom: 20px;
-    font-size: 20px;
+    margin-bottom: 20px; /* Space between paragraphs */
+    font-size: 20px; /* Larger font for better visibility */
 }
 
 /* Word Button Styles */
 .word-button {
-    width: 200px;
-    height: 300px;
-    margin: 20px;
-    border-radius: 10px;
-    perspective: 1000px;
-    display: inline-block;
-    position: relative;
+    width: 200px; /* Consistent width for flashcards */
+    height: 300px; /* Taller for better visuals */
+    margin: 20px; /* Space between each flashcard */
+    border-radius: 10px; /* Smooth, rounded edges */
+    perspective: 1000px; /* Creates 3D effect for flipping */
+    display: inline-block; /* Aligns flashcards side by side */
+    position: relative; /* Needed for flipping to work */
 }
 
 .word-button .inner {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    transform: rotateY(0);
-    transform-style: preserve-3d;
-    transition: transform 0.6s ease-in-out;
+    position: absolute; /* Keeps front and back stacked */
+    width: 100%; /* Matches container width */
+    height: 100%; /* Matches container height */
+    transform: rotateY(0); /* Default state, not flipped */
+    transform-style: preserve-3d; /* Makes 3D flipping work */
+    transition: transform 0.6s ease-in-out; /* Smooth flip animation */
 }
 
 .word-button.flipped .inner {
-    transform: rotateY(180deg);
+    transform: rotateY(180deg); /* Flips to the back */
 }
 
 .word-button .front,
 .word-button .back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background-color: rgba(255, 255, 255, 0.9);
+    position: absolute; /* Keeps both sides stacked */
+    width: 100%; /* Matches container width */
+    height: 100%; /* Matches container height */
+    backface-visibility: hidden; /* Hides the opposite side */
+    border-radius: 10px; /* Matches outer container edges */
+    display: flex; /* Aligns content inside */
+    flex-direction: column; /* Stacks content vertically */
+    justify-content: center; /* Centers content */
+    align-items: center; /* Centers horizontally */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Depth for flashcards */
+    background-color: rgba(255, 255, 255, 0.9); /* Matches the intro box */
 }
 
 .word-button .back {
-    transform: rotateY(180deg);
+    transform: rotateY(180deg); /* Back face starts flipped */
 }
 
 .word-button img {
-    width: 80%;
-    height: auto;
-    margin: 10px;
+    width: 80%; /* Scales images to fit nicely */
+    height: auto; /* Maintains aspect ratio */
+    margin: 10px; /* Space around images */
 }
 
 .word-button .details {
-    font-size: 14px;
-    text-align: center;
-    margin-top: 10px;
+    font-size: 14px; /* Smaller details text */
+    text-align: center; /* Centers the case and example text */
+    margin-top: 10px; /* Space above the details */
 }
 
 /* Footer Styles */
 footer {
-    background-color: #6a5acd;
-    color: white;
-    width: 100%;
-    text-align: center;
-    padding: 10px;
-    margin-top: auto;
-    font-size: 16px;
-    line-height: 1.6;
+    background-color: #6a5acd; /* Footer matches header */
+    color: white; /* White text on purple */
+    width: 100%; /* Stretches footer across the page */
+    text-align: center; /* Centers footer text */
+    padding: 10px; /* Padding for breathing room */
+    margin-top: auto; /* Pushes it to the bottom of the page */
+    font-size: 16px; /* Readable font size */
+    line-height: 1.6; /* Comfortable spacing */
 }

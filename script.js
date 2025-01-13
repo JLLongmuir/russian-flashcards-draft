@@ -1,5 +1,6 @@
 const words = {
     easy: [
+        // Words that are simple to remember and pronounce
         {
             english: "apple",
             russian: "яблоко",
@@ -7,7 +8,7 @@ const words = {
             image: "images/apple.png",
             case: "Именительный падеж (Nominative Case)",
             example: "Я ем яблоко. (I am eating an apple.)",
-            conjugations: null,
+            conjugations: null, // Apples don't conjugate. Easy peasy!
         },
         {
             english: "dog",
@@ -16,10 +17,11 @@ const words = {
             image: "images/dog.png",
             case: "Именительный падеж (Nominative Case)",
             example: "Собака бежит. (The dog is running.)",
-            conjugations: null,
+            conjugations: null, // Straightforward stuff
         },
     ],
     medium: [
+        // Slightly trickier words for practice
         {
             english: "library",
             russian: "библиотека",
@@ -40,6 +42,7 @@ const words = {
         },
     ],
     hard: [
+        // Tougher ones for when I’m feeling ambitious
         {
             english: "philosophy",
             russian: "философия",
@@ -61,12 +64,13 @@ const words = {
     ],
 };
 
+// Loads the "Home" section content
 function showHome() {
     const content = document.getElementById("content");
     content.innerHTML = `
         <section class="home">
             <div class="intro-box">
-                <h2>Добро пожаловать</h2>
+                <h2>Добро пожаловать</h2> <!-- A warm Russian welcome -->
                 <p>Hello, my name is Jonathan Longmuir. I am coding a website to help me learn Russian better and also practice programming. If you are reading this, Nadyusha, I love you with all my heart.</p>
                 <p class="russian-text">
                     Привет, меня зовут Джон Лонгмьюир. Я пишу сайт, чтобы лучше выучить русский язык и попрактиковаться в программировании. Если ты это читаешь, Надюша, я люблю тебя всем сердцем.
@@ -76,13 +80,14 @@ function showHome() {
     `;
 }
 
+// Displays words based on the difficulty tier
 function showTier(tier) {
     const content = document.getElementById("content");
-    content.innerHTML = "";
+    content.innerHTML = ""; // Clearing previous content
     const tierWords = words[tier];
     tierWords.forEach((word) => {
         const button = document.createElement("div");
-        button.classList.add("word-button");
+        button.classList.add("word-button"); // Adding the flipping effect class
         button.innerHTML = `
             <div class="inner">
                 <div class="front">
@@ -99,20 +104,22 @@ function showTier(tier) {
             </div>
         `;
 
+        // Flip and play audio on click
         button.addEventListener("click", () => {
             document.querySelectorAll(".word-button").forEach((b) => b.classList.remove("flipped"));
             button.classList.add("flipped");
             playAudio(word.audio);
         });
 
-        content.appendChild(button);
+        content.appendChild(button); // Adding the card to the page
     });
 }
 
+// Plays audio for a word
 function playAudio(audioSrc) {
     const audio = new Audio(audioSrc);
-    audio.play();
+    audio.play(); // Just hits play, no fuss
 }
 
-// Show Home page by default
+// Sets the default content to "Home" on page load
 document.addEventListener("DOMContentLoaded", showHome);
