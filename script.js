@@ -42,7 +42,7 @@ const words = {
         },
     ],
     hard: [
-        // Tougher ones for when I’m feeling ambitious
+        // Still beginner but slightly more challenging 
         {
             english: "philosophy",
             russian: "философия",
